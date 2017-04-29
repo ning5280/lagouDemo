@@ -18,6 +18,7 @@ gulp.task('lib', function() {
 
 gulp.task('html', function() {
   gulp.src(app.srcPath + '**/*.html')
+  .pipe(rev())
   .pipe(gulp.dest(app.devPath))
   .pipe(gulp.dest(app.prdPath))
   .pipe($.connect.reload());
